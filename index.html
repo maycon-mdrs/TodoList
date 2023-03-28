@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To Do List</title>
+</head>
+<body>
+    <main id="main">
+        <header id="header-container">
+            <h1>horário</h1>
+            <h4>dia</h4>
+        </header>
+
+
+        <div id="add">
+            <input type="text" id="input-txt">
+            <button class="add-btn" onclick="newItem()">+</button>
+        </div>
+        <div id="itens-to-do">
+            <ul id="ul-to-do">
+
+            </ul>
+        </div>
+    </main>
+    <script>
+        const itensToDo = document.getElementById("ul-to-do");
+
+        function newItem() {
+            const inputTxt = document.getElementById("input-txt");
+            const check = document.createElement("input");
+            const item = document.createElement("li");
+            const txt = document.createElement("span");
+            const close = document.createElement("span");
+            close.classList.add("close-btn");
+
+            check.type = "checkbox";
+
+            txt.innerHTML =  inputTxt.value;
+
+            close.innerHTML = "X";
+            
+            item.appendChild(check);
+            item.appendChild(txt);
+            itensToDo.appendChild(item);
+            item.appendChild(close);
+        }
+    
+    </script>
+</body>
+</html>
