@@ -8,28 +8,50 @@
     <title>To Do List</title>
 </head>
 <body>
+    <video id="video-background" autoplay muted loop>
+        <source src="assets/samurai.mp4" type="video/mp4">
+    </video>
     <main id="main">
-        <header id="header-container">
-            <h1>horário</h1>
-            <h4>dia</h4>
-        </header>
+        <section class="bloco">
+            <header id="header-container">
+                <div>
+                    <span id="horas">00</span> 
+                    <span class="tempo">Horas</span>
+                </div>
 
+                <div>
+                    <span id="minutos">00</span> 
+                    <span class="tempo">Minutos</span>
+                </div>
 
-        <div id="add">
-            <input type="text" id="input-txt">
-            <button class="add-btn" onclick="newItem()">+</button>
-        </div>
-        <div id="itens-to-do">
-            <ul id="ul-to-do">
+                <div>
+                    <span id="segundos">00</span>
+                    <span class="tempo">Segundos</span>
+                </div>
+            </header>
 
-            </ul>
-        </div>
+            <section class="dia-section">
+                <div>
+                    <span id="dia">DIA</span>
+                </div>
+            </section>
+            <div id="add">
+                <input type="text" id="input-txt">
+                <button class="add-btn" onclick="newItem()">+</button>
+            </div>
+            <div id="itens-to-do">
+                <ul id="ul-to-do">
+
+                </ul>
+            </div>
+        </section>
     </main>
+    <script src="horario.js"></script>
     <script>
         const itensToDo = document.getElementById("ul-to-do");
 
         function newItem() {
-            const inputTxt = document.getElementById("input-txt");
+            const inputTxt = document.getElementById("input-txt").value;
             const check = document.createElement("input");
             const item = document.createElement("li");
             const txt = document.createElement("span");
@@ -38,14 +60,20 @@
 
             check.type = "checkbox";
 
-            txt.innerHTML =  inputTxt.value;
+            txt.innerHTML =  inputTxt;
 
             close.innerHTML = "X";
-            
-            item.appendChild(check);
-            item.appendChild(txt);
-            itensToDo.appendChild(item);
-            item.appendChild(close);
+
+            if(inputTxt == "") {
+                alert("CAMPO VAZIO")
+            } else {
+                item.appendChild(check);
+                item.appendChild(txt);
+                itensToDo.appendChild(item);
+                item.appendChild(close);
+            }
+            document.getElementById("input-txt").value = "";
+        
         }
     
     </script>
