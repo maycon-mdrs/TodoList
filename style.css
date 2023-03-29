@@ -195,6 +195,7 @@ input:checked ~ .bubble::after {
 .todo-item .todo-content input {
     color: var(--dark);
     font-size: 1.125rem;
+    width: 100%;
 }
 
 .todo-item .actions {
@@ -224,7 +225,7 @@ input:checked ~ .bubble::after {
     background-color: var(--danger);
 }
 .todo-item .actions .delete:hover {
-    background-color: #fc3b38;
+    background-color: #da302d;
 }
 
 /* TAREFA FEITA */
@@ -239,8 +240,10 @@ input:checked ~ .bubble::after {
 #header-container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin-top: 20px;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 #header-container div {
@@ -268,8 +271,12 @@ input:checked ~ .bubble::after {
 }
 
 .dia-div {
-    margin: 20px;
-    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    height: 56px;
     text-align: center;
     background-color: var(--primary);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
@@ -279,7 +286,7 @@ input:checked ~ .bubble::after {
 .dia-div span {
     font-size: 24px;
     color: white;
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 .add-btn {
@@ -314,4 +321,52 @@ ul {
       background-size: cover;
       background-position: center;
     }
-  }
+}
+
+@media (max-width: 600px) {
+    /* RADIO */
+    .bubble {
+        width: 15px;
+        height: 15px;
+    }
+    input:checked ~ .bubble::after {
+        width: 5px;
+        height: 5px;
+    }
+    
+    #header-container div {
+        height: 110px;
+        width: 80px;
+    }
+    .bloco {
+        width: 340px;
+    }
+    #header-container span {
+        font-size: 2.5rem; /* 60px = 3.75rem (60 ÷ 16) */
+    }
+    #header-container span.tempo {
+        font-size: 8px;
+    }
+    .dia-div {
+        height: 40px;
+    }
+    .dia-div span {
+        font-size: 16px;
+    }
+    .todo-list .todo-item {
+        padding: 0.5rem;
+    }
+    
+    .todo-item label {
+        margin-right: 0.5rem;
+    }
+    
+    .todo-item .todo-content {
+       flex: 1 1 0%;
+    }
+    
+    .todo-item .todo-content input {
+        font-size: 0.875rem;
+    }
+    
+}

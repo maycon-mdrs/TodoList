@@ -11,15 +11,19 @@ window.addEventListener('load', () => {
             done: false,
             createAt: new Date().getTime()
         }
+        if(todo.content == ""){
+            alert("PREENCHA TODOS OS CAMPOS")
+        } else {
+            todos.push(todo);
 
-        todos.push(todo);
-
-        localStorage.setItem('todos', JSON.stringify(todos)); 
-
-        e.target.reset();
-
-        showTodos();
+            localStorage.setItem('todos', JSON.stringify(todos)); 
+    
+            e.target.reset();
+    
+            showTodos();
+        }
     })
+    showTodos();
 });
 
 function showTodos() {
@@ -42,7 +46,11 @@ function showTodos() {
         input.type = 'checkbox';
         input.checked = todo.done; // tafera feita 
         span. classList.add('bubble');
-
+        if(input.value == "") {
+            alert("PREENCHA TODOS OS CAMPOS");
+        } else {
+            console.log("else");
+        }
         if(todo.category == 'personal') {
             span.classList.add('personal');
         } else {
@@ -85,6 +93,7 @@ function showTodos() {
             showTodos();
         });
 
+        /* EDIT - BUTTON */
         edit.addEventListener('click', e => {
             const input = content.querySelector('input');
             input.removeAttribute('readonly');
@@ -97,6 +106,7 @@ function showTodos() {
             })
         });
 
+        /* DELET - BUTTON */
         deleteBtn.addEventListener('click', e => {
             todos = todos.filter(t => t != todo);
             localStorage.setItem('todos', JSON.stringify(todos));
