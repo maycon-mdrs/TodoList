@@ -104,3 +104,6 @@ function showTodos() {
         });
     });
 }
+
+// https://www.youtube.com/watch?v=6eFwtaZf6zc 
+// https://www.youtube.com/watch?v=p1GmFCGuVjw
