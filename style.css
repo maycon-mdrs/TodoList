@@ -156,7 +156,7 @@ input:checked ~ .bubble::after {
     color: #FFF;
     background-color: var(--primary);
     border-radius: 0.5rem;
-    box-shadow: var(--personal-glow);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
@@ -352,6 +352,9 @@ ul {
     }
     .dia-div span {
         font-size: 16px;
+    }
+    .criar-todo input[type="submit"] {
+        padding: 0.5rem 1rem;
     }
     .todo-list .todo-item {
         padding: 0.5rem;

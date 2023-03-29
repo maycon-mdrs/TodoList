@@ -11,7 +11,8 @@ window.addEventListener('load', () => {
             done: false,
             createAt: new Date().getTime()
         }
-        if(todo.content == ""){
+        
+        if(todo.content == "" || todo.category == ""){
             alert("PREENCHA TODOS OS CAMPOS")
         } else {
             todos.push(todo);
@@ -45,12 +46,8 @@ function showTodos() {
 
         input.type = 'checkbox';
         input.checked = todo.done; // tafera feita 
-        span. classList.add('bubble');
-        if(input.value == "") {
-            alert("PREENCHA TODOS OS CAMPOS");
-        } else {
-            console.log("else");
-        }
+        span.classList.add('bubble');
+        
         if(todo.category == 'personal') {
             span.classList.add('personal');
         } else {
