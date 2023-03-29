@@ -12,7 +12,7 @@
         <source src="assets/samurai.mp4" type="video/mp4">
     </video>
     <main id="main">
-        <section class="bloco">
+        <div class="bloco">
             <header id="header-container">
                 <div>
                     <span id="horas">00</span> 
@@ -30,20 +30,52 @@
                 </div>
             </header>
 
-            <section class="dia-section">
-                <div>
-                    <span id="dia">DIA</span>
+            <section class="dia-div">
+                <span id="dia">DIA</span>
+            </section>
+
+            <section class="criar-todo">
+                <form id="novo-todo">
+                    <input 
+                        type="text"
+                        name="content"
+                        id="content" 
+                        placeholder="Type your to do item" />
+
+                        <div class="options">
+
+                            <label>
+                                <input 
+                                    type="radio" 
+                                    name="category"
+                                    id="category-1"
+                                    value="business"/>
+                                <span class="bubble business"></span>
+                                <div>Trabalho</div>
+                            </label>
+
+                            <label>
+                                <input 
+                                    type="radio" 
+                                    name="category"
+                                    id="category-2"
+                                    value="personal"/>
+                                <span class="bubble personal"></span>
+                                <div>Pessoal</div>
+                            </label>
+
+                        </div>
+
+                        <input type="submit" value="Add todo" />
+                </form>
+            </section>
+
+            <section class="todo-list">
+                <h3>TODO LIST</h3>
+                <div class="list" id="todo-list">
                 </div>
             </section>
-            <div id="add">
-                <input type="text" id="input-txt">
-                <button class="add-btn" onclick="newItem()">+</button>
-            </div>
-            <div id="itens-to-do">
-                <ul id="ul-to-do">
-
-                </ul>
-            </div>
+           
         </section>
     </main>
     <script src="horario.js"></script>
@@ -77,5 +109,7 @@
         }
     
     </script>
+    <script src="main.js"></script>
+
 </body>
 </html>

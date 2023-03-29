@@ -8,7 +8,6 @@ const relogio = setInterval(()=>{
     let hr = date.getHours();
     let min = date.getMinutes();
     let seg = date.getSeconds();
-
     let day = date.getDay();
 
     if(hr < 10) {
